@@ -6,11 +6,13 @@ import {NgForm} from 'angular2/common'
   templateUrl: 'app/templates/login-form.component.html'
 })
 export class LoginFormComponent {
-  model = {};
   email = '';
   password = '';
 
+  setEmail(value:string) { this.email = value; }
+  setPassword(value:string) { this.password = value; }
+
   onSubmit() { }
 
-  get diagnostic() { return JSON.stringify(this.model); }
+  get diagnostic() { return this.email + ': ' + this.password; }
 }
